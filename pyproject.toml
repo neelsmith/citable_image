@@ -1,7 +1,7 @@
 [project]
-name = "citable_corpus"
+name = "citable_image"
 version = "0.0.1"
-description = "A Python library for working with a corpus of texts canonically citable by CtsUrn."
+description = "A Python library for working images canonically citable by Cite2Urn."
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []
