@@ -1,3 +1,4 @@
-# `citable_corpus`
+# `citable_image`
 
-Work with a corpus of texts canonically citable by CtsUrn.
+Work with a images canonically citable by Cite2Urn.
+
