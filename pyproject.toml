@@ -4,4 +4,21 @@ version = "0.1.0"
 description = "A Python library for working with images canonically citable by Cite2Urn."
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "ipython",
+    "pydantic>=2.12.5",
+    "urn_citation>=0.1.0",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/citable_image"]
