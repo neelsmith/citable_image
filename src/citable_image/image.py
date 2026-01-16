@@ -8,5 +8,6 @@ class CitableImage(BaseModel):
     urn: Cite2Urn
     caption: str
     rights: str
-    date: str
-    license: str
+    
+
+    
