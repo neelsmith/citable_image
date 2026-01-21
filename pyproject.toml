@@ -22,3 +22,13 @@ where = ["src"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/citable_image"]
+
+[tool.pytest.ini_options]
+# Default arguments: run coverage, show local variables on failure
+#addopts = "--cov=src --showlocals -vv"
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]

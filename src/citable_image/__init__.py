@@ -7,7 +7,8 @@ except PackageNotFoundError:
     __version__ = "unknown"
 
 from .service import IIIFService
+from .image import CitableImage
 
 
 
-__all__ = ["IIIFService"]
+__all__ = ["IIIFService", "CitableImage"]
