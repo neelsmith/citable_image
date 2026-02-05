@@ -4,6 +4,10 @@ from urn_citation import Cite2Urn
 class CitableImage(BaseModel):
     """
     A class representing a citable image with its associated metadata.
+    Attributes:
+        urn (Cite2Urn): The URN of the citable image.
+        caption (str): The caption for the citable image.
+        rights (str): The rights information for the citable image.
     """
     urn: Cite2Urn
     caption: str
@@ -25,13 +29,13 @@ class CitableImage(BaseModel):
     
     def delimited(self, delimiter: str = "|") -> str:
         """
-        Returns a delimited string representation of the citable image.
+        Composes a delimited string representation of the citable image structure.
 
         Args:
             delimiter (str): The delimiter to use between fields. Default is "|".
 
         Returns:
-            str: A delimited string of the citable image's attributes.
+            str: A delimited string  representation of the citable image's attributes.
         """
         return f"{str(self.urn)}{delimiter}{self.caption}{delimiter}{self.rights}"
 
@@ -60,6 +64,11 @@ class CitableImage(BaseModel):
 
 def pct_string(u: Cite2Urn, places: int = 3) -> str:    
     """Generate a IIIF percentage region string from a URN subreference.
+    Args:
+        u (Cite2Urn): The URN containing the subreference.
+        places (int): Number of decimal places to round to. Default is 3.
+    Returns:
+        str: A IIIF percentage region string, or None if no subreference is present.
     """
 
     if u.subreference():
