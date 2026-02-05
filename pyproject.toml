@@ -1,7 +1,55 @@
 [project]
 name = "citable_image"
-version = "0.0.2"
-description = "A Python library for working images canonically citable by Cite2Urn."
+version = "0.1.0"
+description = "A Python library for working with images canonically citable by Cite2Urn."
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "ipython",
+    "pydantic>=2.12.5",
+    "urn_citation>=0.1.0",
+]
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.1",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.uv]
+# Ensures these groups are managed by uv
+default-groups = ["dev", "docs"]
+
+[tool.mkdocstrings.handlers.python]
+# Global settings for your API parsing
+options = { docstring_style = "google", show_source = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/citable_image"]
+
+[tool.pytest.ini_options]
+# Default arguments: run coverage, show local variables on failure
+#addopts = "--cov=src --showlocals -vv"
+testpaths = ["tests"]
+
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.14.11",
+]
+
+# Dedicated group for documentation
+docs = [
+    "mkdocs-material>=9.5.0",
+    "mkdocstrings[python]>=0.24.0",
+]

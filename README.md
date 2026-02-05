@@ -1,4 +1,4 @@
 # `citable_image`
 
-Work with a images canonically citable by Cite2Urn.
+Work with IIIF image services that recognize canonical citation of images by `Cite2Urn`.
 
