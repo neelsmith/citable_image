@@ -14,17 +14,30 @@ service = ci.IIIFService(baseurl=baseurl, pathroot=root)
 ```
 
 
-should be written... (code, not docs!)
-
-## Compose a request
-
-- I *think* this code is written...
+## Identify an image by URN
 
 
 ```python
-img = Cite2Urn.from_string("urn:cite2:citebne:complutensian.v1:v1p19@0.6858,0.06753,0.1013,0.02509")
+from urn_citation import Cite2Urn
+
+imgurn = Cite2Urn.from_string("urn:cite2:citebne:complutensian.v1:v1p19@0.6858,0.06753,0.1013,0.02509")
 ```
 
-iifrequest = url(img, service)
+
+## Compose and send IIIF requests.
+
+Compose a IIIF request URL with the `iiif_url` function:
+
+```python
+iifrequest = ci.iiif_url(imgurn, service)
+```
+
+
+An image from an IIIF service with the `iiif_image` function:d
+
+
+```python
+img = ci.iiif_image(imgurn, service)
+```
 
 

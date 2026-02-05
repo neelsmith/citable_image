@@ -13,6 +13,6 @@ plugins:
 
 nav:
   - "Home": index.md
-
-
-
+  - "User Guide":
+    - "Retrieving binary image data": guide/binary_images.md
+  - "API documentation": apis.md

@@ -1,7 +1,9 @@
 # `citable_image`
 
-A Python library for working with images canonically citable by Cite2Urn.
+> A Python library for working with images canonically citable by Cite2Urn.
 
-See [API documentation](apis.md) for full API details.
+
+- See a [guide to making IIIF requests](./guide/binary_images.md)
+- See [API documentation](apis.md)
 
 
