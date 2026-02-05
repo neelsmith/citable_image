@@ -56,3 +56,19 @@ class CitableImage(BaseModel):
         rights = parts[2]
         
         return cls(urn=urn, caption=caption, rights=rights)
+
+
+def pct_string(u: Cite2Urn, places: int = 3) -> str:    
+    """Generate a IIIF percentage region string from a URN subreference.
+    """
+
+    if u.subreference():
+        roi = u.subreference()
+        # Split the subreference by commas to get individual float values
+        floats = roi.split(",")
+        # Multiply each by 100 and round to the specified number of decimal places
+        pct_values = [str(round(float(f) * 100, places)) for f in floats]
+        # Join them back with commas
+        return "pct:" + ",".join(pct_values)
+    else:
+        return None

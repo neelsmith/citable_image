@@ -1,0 +1,18 @@
+site_name: citable_image
+theme:
+  name: material
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google  # Specifically parses your style
+            show_source: true        # Includes a link to the source code
+
+nav:
+  - "Home": index.md
+
+
+
