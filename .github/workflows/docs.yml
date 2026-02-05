@@ -3,6 +3,9 @@ on:
   push:
     branches: [main]
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -11,6 +14,15 @@ jobs:
       
       - name: Install uv
         uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: |
+          uv sync --group docs
 
       - name: Build and Deploy
         run: |
